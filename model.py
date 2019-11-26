@@ -6,14 +6,10 @@ import re
 from nltk.corpus import stopwords
 from nltk import word_tokenize
 from nltk.data import load
-from nltk.stem import SnowballStemmer
 from string import punctuation
 
 #stopword list to use
 spanish_stopwords = stopwords.words('spanish')
-
-#spanish stemmer
-stemmer = SnowballStemmer('spanish')
 
 #punctuation to remove
 non_words = list(punctuation)
@@ -21,12 +17,6 @@ non_words = list(punctuation)
 non_words.extend(['¿', '¡'])
 non_words.extend(map(str,range(10)))
 
-
-def stem_tokens(tokens, stemmer):
-	stemmed = []
-	for item in tokens:
-		stemmed.append(stemmer.stem(item))
-	return stemmed
 
 def tokenize(text):
 	# remove links from tweets
@@ -41,19 +31,35 @@ def tokenize(text):
 	for word in tokens:
 		if not word in spanish_stopwords:
 			final_words.append(word)
-	# stem
-#	try:
-#		stems = stem_tokens(tokens, stemmer)
-#	except Exception as e:
-#		print(e)
-#		stems = ['']
-#        return stems
 	return final_words                                    
+
+negative_words = []
+negative_words_value = []
+with open('dataset_bulling_demo.xlsx - palabras.csv', 'r') as csvFile:
+	reader = csv.reader(csvFile)
+	for row in reader:
+		negative_words.append(row[0])
+		negative_words_value.append(row[1])
+csvFile.close()
+
+#print(negative_words)
+#print(negative_words_value)
+
+#print("#####################################")
 
 with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 	    reader = csv.reader(csvFile)
 	    for row in reader:
 	        phrase=row[4]
-		print(tokenize(phrase))
+		tokenized_phrase = tokenize(phrase)
+		phrase_score = 0.0;
+		index = 0;
+		for word in tokenized_phrase:
+			if word in negative_words:
+				phrase_score = phrase_score + 1; #float(negative_words_value[index]);
+			index += 1
+		message = "Frase \"" + phrase +  "\" es " + str(100*phrase_score/len(tokenized_phrase)) + "% negativa"
+		print(message)
+
 csvFile.close()
 
