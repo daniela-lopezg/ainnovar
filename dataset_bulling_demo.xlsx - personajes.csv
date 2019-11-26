@@ -1,0 +1,19 @@
+id,nombres,padre,comunahogar,edad
+1,Bart Simpson,Homer Simpson,La Florida,13
+2,Lisa Simpson,Homer Simpson,La Florida,12
+3,Milhouse Van Houten,Kirk Van Houten,La Florida,13
+4,Nelson Muntz,Mr. Muntz,La Florida,14
+5,Martin Prince,Mr. Prince,Providencia,14
+6,Ralph Wiggum,Chief Wiggum,la Florida,12
+7,Allison Taylor,Mr. Taylor,Providencia,13
+8,Comic Book Guy,Mr. Guy,Providencia,15
+9,Lenny Leonard,Mr. Leonard,Providencia,15
+10,Hans Moleman,Mrs. Moleman,Providencia,15
+11,Fat Tony,Mr. Grand Father,Providencia,14
+12,Nikki Mckenna,Mrs. Mckenna,Providencia,15
+13,Madam Wu,Mr. Wu,Ñuñoa,13
+14,Herbert Powell,Mrs. Powell,Ñuñoa,13
+15,Dan Gillick,Mr. Gillick,Ñuñoa,12
+16,Todd Flanders,Nedward Flanders,La Florida,12
+17,Kearney Zzyzwicz,Mrs. Zzyzwicz,la Florida,15
+18,Rod Flanders,Nedward Flanders,La Florida,15
