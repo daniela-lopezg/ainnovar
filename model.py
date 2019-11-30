@@ -114,11 +114,14 @@ with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 		emisor = int(row[5])
 		tokenized_phrase = tokenize(phrase)
 		phrase_score = 0.0;
-#		index = 0;
+		index = 0;
 		for word in tokenized_phrase:
+			if(index == 0):
+				index +=1
+				continue
 			if word in negative_words:
-				phrase_score = phrase_score + 1; #float(negative_words_value[index]);
-#			index += 1
+				phrase_score = phrase_score + float(negative_words_value[index]);
+			index += 1
 		message = "En la frase \"" + phrase + "\""		
 		print(message)
 		increase_interactions(children_list, row[0])
