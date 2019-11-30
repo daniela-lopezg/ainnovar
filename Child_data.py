@@ -44,3 +44,6 @@ class Child_data:
 
 	def getInteractions_total(self):
 		return self.interactions_total
+
+	def getProvince(self):
+		return self.province

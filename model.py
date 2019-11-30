@@ -5,6 +5,7 @@ import nltk
 import re
 import sys
 from Child_data import *
+from Province import *
 from nltk.corpus import stopwords
 from nltk import word_tokenize
 from nltk.data import load
@@ -63,6 +64,12 @@ def increase_bullied_score(child_list, userid):
 	message = str(child_list[int(userid)].getFullname()) + " recibe bullying"
 	print(message)
 
+def increase_province_interactions(province_list, child_list, userid):
+	index = int(get_children(child_list, userid))
+	province_name = child_list[index].getProvince()
+	for province in province_list:
+		if(province.getName() == province_name):
+			province.increaseInteractions()
 
 negative_words = []
 negative_words_value = []
@@ -74,14 +81,26 @@ with open('dataset_bulling_demo.xlsx - palabras.csv', 'r') as csvFile:
 csvFile.close()
 
 children_list = []
+province_names = []
 
 with open('dataset_bulling_demo.xlsx - personajes.csv', 'r') as csvFile:
 	reader = csv.reader(csvFile)
+	index = 0
 	for row in reader:
 		child = Child_data(row[0], row[1], row[2], row[3], row[4])
 		children_list.append(child)
+		province = child.getProvince()
+		if(index == 0):
+			index = -1
+			continue
+		if(province not in province_names):
+			province_names.append(province)
 csvFile.close()
 
+province_list = []
+for name in province_names:
+	province = Province(name)
+	province_list.append(province)
 
 with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 	    reader = csv.reader(csvFile)
@@ -103,6 +122,7 @@ with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 		message = "En la frase \"" + phrase + "\""		
 		print(message)
 		increase_interactions(children_list, row[0])
+		increase_province_interactions(province_list, children_list, row[0])
 		if(phrase_score >= threshold):
 			negative_phrase = True
 		if(negative_phrase and emisor == 1):
@@ -134,3 +154,7 @@ for child in children_list:
 	else:
 		message = child.getFullname() + " no es un bully"
 		print(message)
+
+for province in province_list:
+	message = "Total de interacciones en la comuna de: " + province.getName() + ": " + str(province.getInteractions())
+	print(message)
