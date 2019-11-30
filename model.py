@@ -10,6 +10,7 @@ from nltk.corpus import stopwords
 from nltk import word_tokenize
 from nltk.data import load
 from string import punctuation
+from string import lower
 
 #stopword list to use
 spanish_stopwords = stopwords.words('spanish')
@@ -35,7 +36,7 @@ def tokenize(text):
 	final_words = []
 	for word in tokens:
 		if not word in spanish_stopwords:
-			final_words.append(word)
+			final_words.append(word.lower())
 	return final_words                                    
 
 def get_children(child_list, userid):
@@ -50,7 +51,6 @@ def get_children(child_list, userid):
 def increase_interactions(child_list, userid):
 	index = get_children(child_list, userid)
 	child_list[int(userid)].increase_interactions_total()
-	print(child_list[int(userid)].getInteractions_total())	
 
 def increase_bully_score(child_list,userid):
 	index = get_children(child_list, userid)
@@ -75,7 +75,11 @@ negative_words = []
 negative_words_value = []
 with open('dataset_bulling_demo.xlsx - palabras.csv', 'r') as csvFile:
 	reader = csv.reader(csvFile)
+	index = 0
 	for row in reader:
+		if(index == 0):
+			index = -1
+			continue	
 		negative_words.append(row[0])
 		negative_words_value.append(row[1])
 csvFile.close()
@@ -114,14 +118,14 @@ with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 		emisor = int(row[5])
 		tokenized_phrase = tokenize(phrase)
 		phrase_score = 0.0;
-		index = 0;
+		bad_words = 0
 		for word in tokenized_phrase:
-			if(index == 0):
-				index +=1
-				continue
+			index_bad_word = 0
 			if word in negative_words:
-				phrase_score = phrase_score + float(negative_words_value[index]);
-			index += 1
+				phrase_score = phrase_score + float(negative_words_value[index_bad_word]);
+				bad_words = bad_words + 1
+				index_bad_word += 1
+		phrase_score = phrase_score/len(tokenized_phrase)
 		message = "En la frase \"" + phrase + "\""		
 		print(message)
 		increase_interactions(children_list, row[0])
@@ -130,17 +134,19 @@ with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 			negative_phrase = True
 		if(negative_phrase and emisor == 1):
 			increase_bully_score(children_list, row[0])
-		elif(negative_phrase and emisor == 0):
+		if(negative_phrase and emisor == 0):
 			increase_bullied_score(children_list, row[0])
-		else:
+		if(negative_phrase == False):
 			print("Nadie recibió bullying")
-		message = "Frase \"" + phrase +  "\" es " + str(100*phrase_score/len(tokenized_phrase)) + "% negativa"
+		message = "Frase \"" + phrase +  "\" es " + str(100*bad_words/len(tokenized_phrase)) + "% negativa"
+		print(message)
+		message = "La frase tiene un puntaje de " + str(phrase_score) + " en puntaje de 0 a 7"
 		print(message)
 		print("#############################################################################")
 
 csvFile.close()
 
-for child in children_list:
+for child in children_list:	
 	child.set_bully_score()
 	child.set_bullied_score()
 	child_bullied_score = child.getBullied_Score()
