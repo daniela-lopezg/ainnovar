@@ -22,7 +22,10 @@ non_words.extend(['¿', '¡'])
 non_words.extend(map(str,range(10)))
 
 # score that a phrase has to have to be negative
-threshold = float(sys.argv[1])
+threshold_negative = float(sys.argv[1])
+threshold_level1 = float(sys.argv[2])
+threshold_level2 = float(sys.argv[3])
+threshold_level3 = float(sys.argv[4])
 
 def tokenize(text):
 	# remove links from tweets
@@ -36,7 +39,7 @@ def tokenize(text):
 	final_words = []
 	for word in tokens:
 		if not word in spanish_stopwords:
-			final_words.append(word.lower())
+			final_words.append(word)
 	return final_words                                    
 
 def get_children(child_list, userid):
@@ -71,6 +74,25 @@ def increase_province_interactions(province_list, child_list, userid):
 		if(province.getName() == province_name):
 			province.increaseInteractions()
 
+def increase_bullying_score(child_list, userid, score):
+	index = get_children(child_list, userid)
+	child_list[int(userid)].increase_average_bullying(score)
+
+def define_negativity_level(child):
+	average_bullying = child.getAverage_bullying()
+	if(average_bullying !=0):
+		if(average_bullying <= threshold_level1):
+			child.setImpact_level(1)
+		elif(average_bullying > threshold_level1 and average_bullying <= threshold_level2):
+			child.setImpact_level(2)
+		elif(average_bullying > threshold_level2 and average_bullying <= threshold_level3):
+			child.setImpact_level(3)
+		elif(average_bullying > threshold_level3):
+			child.setImpact_level(4)
+		
+	else:
+		child.setImpact_level(0)
+	
 negative_words = []
 negative_words_value = []
 with open('dataset_bulling_demo.xlsx - palabras.csv', 'r') as csvFile:
@@ -121,7 +143,7 @@ with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 		bad_words = 0
 		for word in tokenized_phrase:
 			index_bad_word = 0
-			if word in negative_words:
+			if word.lower() in negative_words:
 				phrase_score = phrase_score + float(negative_words_value[index_bad_word]);
 				bad_words = bad_words + 1
 				index_bad_word += 1
@@ -130,7 +152,7 @@ with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 		print(message)
 		increase_interactions(children_list, row[0])
 		increase_province_interactions(province_list, children_list, row[0])
-		if(phrase_score >= threshold):
+		if(phrase_score >= threshold_negative):
 			negative_phrase = True
 		if(negative_phrase and emisor == 1):
 			increase_bully_score(children_list, row[0])
@@ -142,6 +164,8 @@ with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 		print(message)
 		message = "La frase tiene un puntaje de " + str(phrase_score) + " en puntaje de 0 a 7"
 		print(message)
+		increase_bullying_score(children_list, row[0], phrase_score)
+			
 		print("#############################################################################")
 
 csvFile.close()
@@ -149,6 +173,7 @@ csvFile.close()
 for child in children_list:	
 	child.set_bully_score()
 	child.set_bullied_score()
+	child.setAverage_bullying()
 	child_bullied_score = child.getBullied_Score()
 	child_bully_score = child.getBully_Score()
 	if(child_bullied_score != 0.0):
@@ -164,6 +189,9 @@ for child in children_list:
 		message = child.getFullname() + " no es un bully"
 		print(message)
 
+	define_negativity_level(child)
+	message = "Nivel de impacto de bullying es nivel " + str(child.getImpact_level()) + " con promedio de bullying en nota: " + str(child.getAverage_bullying())
+	print(message)
 for province in province_list:
 	message = "Total de interacciones en la comuna de: " + province.getName() + ": " + str(province.getInteractions())
 	print(message)
