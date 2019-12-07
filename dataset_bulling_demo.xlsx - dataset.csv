@@ -18,16 +18,16 @@ id,nombre,colegio,comuna colegio,mensaje,direccion,id_emisor,emisor,interaccion_
 1,Bart Simpson,Florida High School,La Florida,AWEONAO,0,4,Nelson Muntz,3,0,6,1,3,0
 1,Bart Simpson,Florida High School,La Florida,Pa que vamos a la clase de Irrutia si igual es entero aweonao,1,1,Bart Simpson,5,0,6,1,3,0
 1,Bart Simpson,Florida High School,La Florida,wn inservible,1,1,Bart Simpson,3,0,10,1,3,0
-2,Lisa Simpson,Florida High School,La Florida,wea imbécil,1,2,Lisa Simpson,3,0,20,0,0,0
+2,Lisa Simpson,Florida High School,La Florida,wea imbecil,1,2,Lisa Simpson,3,0,20,0,0,0
 2,Lisa Simpson,Florida High School,La Florida,qla fea,0,17,Kearney Zzyzwicz,3,0,5,1,3,0
 2,Lisa Simpson,Florida High School,La Florida,gorda inservible,0,17,Kearney Zzyzwicz,2,4,10,1,3,0
 2,Lisa Simpson,Florida High School,La Florida,amarilla de mierda,0,17,Kearney Zzyzwicz,3,0,4,1,3,0
 2,Lisa Simpson,Florida High School,La Florida,roja ql,0,17,Kearney Zzyzwicz,3,0,10,1,3,0
-2,Lisa Simpson,Florida High School,La Florida,por qué no le day de comer a tu mamá,0,17,Kearney Zzyzwicz,2,4,7,1,3,0
+2,Lisa Simpson,Florida High School,La Florida,por que no le day de comer a tu vieja,0,17,Kearney Zzyzwicz,2,4,7,1,3,0
 2,Lisa Simpson,Florida High School,La Florida,chancha ql,0,17,Kearney Zzyzwicz,3,0,6,1,3,0
 2,Lisa Simpson,Florida High School,La Florida,qla fea ctm,0,0,Collins,6,0,10,1,3,0
-2,Lisa Simpson,Florida High School,La Florida,ctm andate del país,0,4,Nelson Muntz,33,28,8,4,0,0
-2,Lisa Simpson,Florida High School,La Florida,a quién le importa?,0,4,Nelson Muntz,56,3,45,0,0,0
+2,Lisa Simpson,Florida High School,La Florida,ctm andate del pais,0,4,Nelson Muntz,33,28,8,4,0,0
+2,Lisa Simpson,Florida High School,La Florida,a quien le importa?,0,4,Nelson Muntz,56,3,45,0,0,0
 2,Lisa Simpson,Florida High School,La Florida,hablale a mi mano qla,0,0,Collins,8,0,6,1,3,0
 2,Lisa Simpson,Florida High School,La Florida,chacha ql fea,0,0,Collins,0,14,1,0,0,0
 2,Lisa Simpson,Florida High School,La Florida,gila ql,0,0,Collins,0,8,10,0,0,0
@@ -41,8 +41,8 @@ id,nombre,colegio,comuna colegio,mensaje,direccion,id_emisor,emisor,interaccion_
 4,Nelson Muntz,Florida High School,La Florida,sapo qlo,0,4,Nelson Muntz,32,2,32,3,0,0
 4,Nelson Muntz,Florida High School,La Florida,y tu hermana entera foxy,0,4,Nelson Muntz,0,10,2,1,0,0
 4,Nelson Muntz,Florida High School,La Florida,AWEONAO,0,4,Nelson Muntz,3,0,6,1,0,0
-4,Nelson Muntz,Florida High School,La Florida,ctm andate del país,0,4,Nelson Muntz,33,28,8,4,0,0
-4,Nelson Muntz,Florida High School,La Florida,a quién le importa?,0,4,Nelson Muntz,43,3,45,0,0,0
+4,Nelson Muntz,Florida High School,La Florida,ctm andate del pais,0,4,Nelson Muntz,33,28,8,4,0,0
+4,Nelson Muntz,Florida High School,La Florida,a quien le importa?,0,4,Nelson Muntz,43,3,45,0,0,0
 4,Nelson Muntz,Florida High School,La Florida,WEON WEON!!,0,4,Nelson Muntz,12,30,26,2,0,0
 4,Nelson Muntz,Florida High School,La Florida,WEON WEON!! (8) (8),0,4,Nelson Muntz,2,1,6,1,0,0
 4,Nelson Muntz,Florida High School,La Florida,tonto culiao,0,4,Nelson Muntz,44,2,56,0,0,0
@@ -51,12 +51,12 @@ id,nombre,colegio,comuna colegio,mensaje,direccion,id_emisor,emisor,interaccion_
 4,Nelson Muntz,Florida High School,La Florida,pa que tan aweonao,0,4,Nelson Muntz,55,2,49,0,0,0
 4,Nelson Muntz,Florida High School,La Florida,tonto weon,0,4,Nelson Muntz,3,0,8,1,0,0
 4,Nelson Muntz,Florida High School,La Florida,pa que comentai vo ql,0,4,Nelson Muntz,46,3,41,0,0,0
-4,Nelson Muntz,Florida High School,La Florida,no me interesa tu caga de opinión,0,4,Nelson Muntz,48,4,44,0,0,0
+4,Nelson Muntz,Florida High School,La Florida,no me interesa tu caga de opinion,0,4,Nelson Muntz,48,4,44,0,0,0
 4,Nelson Muntz,Florida High School,La Florida,aweonao te crei vivo,1,0,Andrea GG,5,0,4,0,3,0
 4,Nelson Muntz,Florida High School,La Florida,aweonao,0,4,Nelson Muntz,44,1,52,0,0,3
 4,Nelson Muntz,Florida High School,La Florida,tonto aweonao,0,4,Nelson Muntz,53,2,40,0,1,0
 4,Nelson Muntz,Florida High School,La Florida,TONTO WN GIL!,0,4,Nelson Muntz,4,0,7,2,3,0
-4,Nelson Muntz,Florida High School,La Florida,culiao imbácil por la re chucha,0,4,Nelson Muntz,1,0,8,0,2,1
+4,Nelson Muntz,Florida High School,La Florida,culiao imbacil por la re chucha,0,4,Nelson Muntz,1,0,8,0,2,1
 4,Nelson Muntz,Florida High School,La Florida,giles de mierda,0,4,Nelson Muntz,59,7,45,0,1,1
 5,Martin Prince,Colegio Pedro de Valdivia,Providencia,imbeciles de mierda,0,5,Martin Prince,2,0,7,0,4,0
 5,Martin Prince,Colegio Pedro de Valdivia,Providencia,que mierda te crei?,0,5,Martin Prince,3,2,9,0,2,0
@@ -66,19 +66,19 @@ id,nombre,colegio,comuna colegio,mensaje,direccion,id_emisor,emisor,interaccion_
 5,Martin Prince,Colegio Pedro de Valdivia,Providencia,mirate al espejo mona aweona,0,5,Martin Prince,11,0,3,0,0,1
 5,Martin Prince,Colegio Pedro de Valdivia,Providencia,eri tan maricon,1,11,Fat Tony,22,0,5,2,1,0
 5,Martin Prince,Colegio Pedro de Valdivia,Providencia,por la chucha no cachai nah,1,9,Lenny Leonard,1,0,6,0,1,0
-5,Martin Prince,Colegio Pedro de Valdivia,Providencia,pa que tan llorón,1,9,Lenny Leonard,3,3,11,0,0,0
-5,Martin Prince,Colegio Pedro de Valdivia,Providencia,qlo llorón,1,11,Fat Tony,9,4,0,0,0,1
-10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,qlo llorón,1,11,Fat Tony,6,2,30,3,1,0
+5,Martin Prince,Colegio Pedro de Valdivia,Providencia,pa que tan lloron,1,9,Lenny Leonard,3,3,11,0,0,0
+5,Martin Prince,Colegio Pedro de Valdivia,Providencia,qlo lloron,1,11,Fat Tony,9,4,0,0,0,1
+10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,qlo lloron,1,11,Fat Tony,6,2,30,3,1,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,andai puro weando,1,11,Fat Tony,2,3,29,3,1,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,cara de caca,1,11,Fat Tony,10,3,28,3,0,0
-10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,cagón de mierda,1,0,Claudia NN,7,3,24,1,0,0
+10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,cagon de mierda,1,0,Claudia NN,7,3,24,1,0,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,te crei cuico ql,1,0,Claudia NN,1,0,24,0,0,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,denle de comer al wn,1,0,Claudia NN,2,0,27,0,1,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,nadie te hecho fichas,1,11,Fat Tony,1,1,31,1,1,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,andate a otro lao wn,1,0,Antony,3,1,28,1,0,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,ql awonao,1,0,Antony,8,1,24,2,1,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,TONTO WN GIL!,1,11,Fat Tony,5,3,25,3,0,0
-10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,culia imbécil por la rechucha,1,0,Antony,6,2,20,1,0,0
+10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,culia imbecil por la rechucha,1,0,Antony,6,2,20,1,0,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,por la rechucha que deci,1,9,Lenny Leonard,3,2,28,3,0,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,tonto aweonao,1,9,Lenny Leonard,10,2,22,2,0,0
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,tonto gil,1,0,Trinidad_88,2,2,30,3,0,0
@@ -91,8 +91,8 @@ id,nombre,colegio,comuna colegio,mensaje,direccion,id_emisor,emisor,interaccion_
 10,Hans Moleman,Colegio Pedro de Valdivia,Providencia,aweonao idiota,1,11,Fat Tony,6,2,27,0,1,0
 11,Fat Tony,Colegio Pedro de Valdivia,Providencia,que aweona,0,11,Fat Tony,8,0,21,2,1,0
 11,Fat Tony,Colegio Pedro de Valdivia,Providencia,eri tan maricon,0,11,Fat Tony,22,0,5,2,1,0
-11,Fat Tony,Colegio Pedro de Valdivia,Providencia,qlo llorón,0,11,Fat Tony,9,4,0,0,0,1
-11,Fat Tony,Colegio Pedro de Valdivia,Providencia,qlo llorón,0,11,Fat Tony,6,2,30,3,1,0
+11,Fat Tony,Colegio Pedro de Valdivia,Providencia,qlo lloron,0,11,Fat Tony,9,4,0,0,0,1
+11,Fat Tony,Colegio Pedro de Valdivia,Providencia,qlo lloron,0,11,Fat Tony,6,2,30,3,1,0
 11,Fat Tony,Colegio Pedro de Valdivia,Providencia,andai puro weando,0,11,Fat Tony,2,3,29,3,1,0
 11,Fat Tony,Colegio Pedro de Valdivia,Providencia,cara de caca,0,11,Fat Tony,10,3,28,3,0,0
 11,Fat Tony,Colegio Pedro de Valdivia,Providencia,nadie te hecho fichas,0,11,Fat Tony,1,1,31,1,1,0
@@ -128,7 +128,7 @@ id,nombre,colegio,comuna colegio,mensaje,direccion,id_emisor,emisor,interaccion_
 17,Kearney Zzyzwicz,Florida High School,La Florida,gorda inservible,0,17,Kearney Zzyzwicz,2,4,10,1,3,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,amarilla de mierda,0,17,Kearney Zzyzwicz,3,0,4,1,3,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,roja ql,0,17,Kearney Zzyzwicz,3,0,10,1,3,0
-17,Kearney Zzyzwicz,Florida High School,La Florida,por qué no le day de comer a tu mamá,0,17,Kearney Zzyzwicz,2,4,7,1,3,0
+17,Kearney Zzyzwicz,Florida High School,La Florida,por que no le day de comer a tu vieja,0,17,Kearney Zzyzwicz,2,4,7,1,3,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,chancha ql,0,17,Kearney Zzyzwicz,3,0,6,1,3,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,ql maricon,0,17,Kearney Zzyzwicz,10,0,6,1,7,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,te gusta el pico,0,17,Kearney Zzyzwicz,5,0,7,1,3,0
@@ -136,7 +136,7 @@ id,nombre,colegio,comuna colegio,mensaje,direccion,id_emisor,emisor,interaccion_
 17,Kearney Zzyzwicz,Florida High School,La Florida,AWEONAO,0,17,Kearney Zzyzwicz,4,0,1,0,1,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,TONTO GIL,0,17,Kearney Zzyzwicz,8,0,1,0,0,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,MARICON DE MIERDA,0,17,Kearney Zzyzwicz,4,0,1,0,0,0
-17,Kearney Zzyzwicz,Florida High School,La Florida,tu mamá te cago,0,17,Kearney Zzyzwicz,8,0,6,0,0,0
+17,Kearney Zzyzwicz,Florida High School,La Florida,tu vieja te cago,0,17,Kearney Zzyzwicz,8,0,6,0,0,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,tu hermana es entera zorra,0,17,Kearney Zzyzwicz,1,0,1,0,0,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,que chucha tu cara wn,0,17,Kearney Zzyzwicz,2,0,7,0,1,0
 17,Kearney Zzyzwicz,Florida High School,La Florida,la cara de wn que teni no ma,0,17,Kearney Zzyzwicz,4,0,3,0,0,0

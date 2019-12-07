@@ -4,6 +4,7 @@ import csv
 import nltk
 import re
 import sys
+import time
 from Child_data import *
 from Province import *
 from nltk.corpus import stopwords
@@ -111,14 +112,10 @@ province_names = []
 
 with open('dataset_bulling_demo.xlsx - personajes.csv', 'r') as csvFile:
 	reader = csv.reader(csvFile)
-	index = 0
 	for row in reader:
 		child = Child_data(row[0], row[1], row[2], row[3], row[4])
 		children_list.append(child)
 		province = child.getProvince()
-		if(index == 0):
-			index = -1
-			continue
 		if(province not in province_names):
 			province_names.append(province)
 csvFile.close()
@@ -160,38 +157,52 @@ with open('dataset_bulling_demo.xlsx - dataset.csv', 'r') as csvFile:
 			increase_bullied_score(children_list, row[0])
 		if(negative_phrase == False):
 			print("Nadie recibió bullying")
-		message = "Frase \"" + phrase +  "\" es " + str(100*bad_words/len(tokenized_phrase)) + "% negativa"
+		message = "Frase \"" + phrase +  "\" es " + str("{0:.2f}".format(100*bad_words/len(tokenized_phrase))) + "% negativa"
 		print(message)
-		message = "La frase tiene un puntaje de " + str(phrase_score) + " en puntaje de 0 a 7"
+		message = "La frase tiene un puntaje de " + str("{0:.2f}".format(phrase_score)) + " en puntaje de 0 a 7"
 		print(message)
-		increase_bullying_score(children_list, row[0], phrase_score)
+		if(emisor == 0):
+			increase_bullying_score(children_list, row[0], phrase_score)
 			
 		print("#############################################################################")
-
+		time.sleep(0.13)
 csvFile.close()
 
-for child in children_list:	
+count = 0
+for child in children_list:
+	if(count == 0):
+		count = -1
+		continue	
 	child.set_bully_score()
 	child.set_bullied_score()
 	child.setAverage_bullying()
 	child_bullied_score = child.getBullied_Score()
 	child_bully_score = child.getBully_Score()
 	if(child_bullied_score != 0.0):
-		message = child.getFullname() + " recibe bullying con un puntaje de " + str(child_bullied_score*100) + "%"
+		message = child.getFullname() + " recibe bullying con un puntaje de " + str("{0:.2f}".format(child_bullied_score*100)) + "%"
 		print(message)
 	else:
 		message = child.getFullname() + " no recibe bullying"
 		print(message)
 	if(child_bully_score != 0.0):
-		message = child.getFullname() + " es un bully con un puntaje de " + str(child_bully_score*100) + "%"
+		message = child.getFullname() + " es un bully con un puntaje de " + str("{0:.2f}".format(child_bully_score*100)) + "%"
 		print(message)
 	else:
 		message = child.getFullname() + " no es un bully"
 		print(message)
 
 	define_negativity_level(child)
-	message = "Nivel de impacto de bullying es nivel " + str(child.getImpact_level()) + " con promedio de bullying en nota: " + str(child.getAverage_bullying())
+	if(child.getImpact_level()!=0):
+		message = "Nivel de impacto de bullying es nivel " + str(child.getImpact_level()) + " con promedio de bullying en nota: " + str( "{0:.2f}".format(child.getAverage_bullying()))
+	else:
+		message = "No hay impacto de bullying"
 	print(message)
+	time.sleep(0.7)
+count = 0
 for province in province_list:
+	if(count == 0):
+		count = -1
+		continue
 	message = "Total de interacciones en la comuna de: " + province.getName() + ": " + str(province.getInteractions())
 	print(message)
+	time.sleep(0.5)
